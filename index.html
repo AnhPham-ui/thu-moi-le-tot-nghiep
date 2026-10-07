@@ -914,35 +914,35 @@ function loadData() {
   var hasUrlData = false;
 
   if (urlParams.get('to')) {
-    appData.toName = decodeURIComponent(urlParams.get('to'));
+    appData.toName = urlParams.get('to');
     hasUrlData = true;
   }
   if (urlParams.get('grad')) {
-    appData.gradName = decodeURIComponent(urlParams.get('grad'));
+    appData.gradName = urlParams.get('grad');
     hasUrlData = true;
   }
   if (urlParams.get('time')) {
-    appData.time = decodeURIComponent(urlParams.get('time'));
+    appData.time = urlParams.get('time');
     hasUrlData = true;
   }
   if (urlParams.get('date')) {
-    appData.date = decodeURIComponent(urlParams.get('date'));
+    appData.date = urlParams.get('date');
     hasUrlData = true;
   }
   if (urlParams.get('venue')) {
-    appData.venue = decodeURIComponent(urlParams.get('venue'));
+    appData.venue = urlParams.get('venue');
     hasUrlData = true;
   }
   if (urlParams.get('addr')) {
-    appData.addr = decodeURIComponent(urlParams.get('addr'));
+    appData.addr = urlParams.get('addr');
     hasUrlData = true;
   }
   if (urlParams.get('msg')) {
-    appData.message = decodeURIComponent(urlParams.get('msg'));
+    appData.message = urlParams.get('msg');
     hasUrlData = true;
   }
   if (urlParams.get('purl')) {
-    appData.photoUrl = decodeURIComponent(urlParams.get('purl'));
+    appData.photoUrl = urlParams.get('purl');
     hasUrlData = true;
   }
   
@@ -1131,14 +1131,14 @@ function generateShareUrl() {
   var baseUrl = window.location.origin + window.location.pathname;
   var params = new URLSearchParams();
 
-  params.set('to', encodeURIComponent(appData.toName));
-  params.set('grad', encodeURIComponent(appData.gradName));
-  params.set('time', encodeURIComponent(appData.time));
-  params.set('date', encodeURIComponent(appData.date));
-  params.set('venue', encodeURIComponent(appData.venue));
-  if (appData.addr) params.set('addr', encodeURIComponent(appData.addr));
-  if (appData.message) params.set('msg', encodeURIComponent(appData.message));
-  if (appData.photoUrl) params.set('purl', encodeURIComponent(appData.photoUrl));
+  params.set('to', appData.toName);
+  params.set('grad', appData.gradName);
+  params.set('time', appData.time);
+  params.set('date', appData.date);
+  params.set('venue', appData.venue);
+  if (appData.addr) params.set('addr', appData.addr);
+  if (appData.message) params.set('msg', appData.message);
+  if (appData.photoUrl) params.set('purl', appData.photoUrl);
 
   var fullUrl = baseUrl + '?' + params.toString();
 
