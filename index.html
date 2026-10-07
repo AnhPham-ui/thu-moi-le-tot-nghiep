@@ -1,15 +1,1344 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiep Moi Tot Nghiep - Pham Thi Bich Loan</title>
-  <meta name="description" content="Thiep moi le tot nghiep cua Pham Thi Bich Loan" />
+  <title>Thư Mời Lễ Tốt Nghiệp - Phạm Thị Bích Loan</title>
+  <meta name="description" content="Thư mời tham dự Lễ tốt nghiệp cử nhân của Phạm Thị Bích Loan tại Trường Đại học Kinh doanh và Công nghệ Hà Nội, ngày 12/10/2026." />
+  <meta property="og:title" content="Thư Mời Lễ Tốt Nghiệp - Phạm Thị Bích Loan" />
+  <meta property="og:description" content="Trân trọng kính mời Quý vị tham dự Lễ trao bằng tốt nghiệp lúc 10:00 ngày 12/10/2026." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --navy: #08122a;
+      --navy-light: #162447;
+      --navy-dark: #040814;
+      --gold: #bfa142;
+      --gold-dark: #7a540f;
+      --gold-deep: #5e400a;
+      --gold-light: #fbe39e;
+      --gold-border: #d4af37;
+      --cream: #fbf7ee;
+      --cream-light: #fffdf9;
+      --text-dark: #070d1e;
+      --text-muted: #1e293b;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 30% 10%, #152554 0%, #091329 60%, #030712 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      color: #fff;
+    }
+
+    /* PARTICLES */
+    #particles {
+      position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+    }
+    .particle {
+      position: absolute; border-radius: 50%;
+      animation: floatUp linear infinite; opacity: 0;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.7; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* ENVELOPE SCENE */
+    #envelope-scene {
+      position: relative; z-index: 10;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 28px; padding: 36px 16px;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      width: 100%; max-width: 600px;
+    }
+    .scene-title { text-align: center; }
+    .scene-title h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      background: linear-gradient(90deg, #d4af37 0%, #fff2b2 35%, #bfa142 60%, #fff6cc 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 3.5s linear infinite;
+      line-height: 1.15;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    .scene-title .sub-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.15rem, 3.2vw, 1.55rem);
+      font-weight: 900;
+      color: #fce8a9;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .scene-title .sub-event {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: rgba(255, 240, 195, 0.95);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* ENVELOPE BOX */
+    .envelope-wrapper {
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: min(440px, 92vw);
+    }
+    .envelope-wrapper:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+    .envelope-box {
+      width: 100%;
+      background: linear-gradient(160deg, #ede4d1 0%, #f7f1e1 45%, #e5d8bc 100%);
+      border-radius: 12px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.6), 0 0 45px rgba(212, 175, 55, 0.3);
+      position: relative; overflow: hidden;
+      border: 2px solid rgba(212, 175, 55, 0.6);
+    }
+    .env-flap {
+      width: 100%; height: 0;
+      border-left: calc(min(440px, 92vw) / 2) solid transparent;
+      border-right: calc(min(440px, 92vw) / 2) solid transparent;
+      border-top: calc(min(440px, 92vw) * 0.44) solid #cfbc82;
+      position: relative;
+    }
+    .env-flap::after {
+      content: '';
+      position: absolute;
+      top: calc(-1 * min(440px, 92vw) * 0.44 + 14px);
+      left: 50%; transform: translateX(-50%);
+      width: 62px; height: 62px;
+      background: radial-gradient(circle, #f3d884 20%, #a87f22 80%, #6e4e08 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #fff1b8, 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .seal-emoji {
+      position: absolute;
+      top: calc(-1 * min(440px, 92vw) * 0.44 + 23px);
+      left: 50%; transform: translateX(-50%);
+      font-size: 26px; z-index: 5;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .env-body-area {
+      min-height: 180px; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 20px;
+    }
+    .env-side-left {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 50%;
+      background: linear-gradient(to right, #cfbc82, #ede4d1);
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+    .env-side-right {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
+      background: linear-gradient(to left, #c4b074, #e5d8bc);
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    }
+    .env-label {
+      position: relative; z-index: 5; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      background: rgba(255, 253, 245, 0.93);
+      padding: 16px 22px; border-radius: 8px;
+      border: 1.8px solid #d4af37;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+      width: 88%;
+    }
+    .env-label .env-badge {
+      font-family: 'Montserrat', sans-serif; font-size: 0.74rem;
+      font-weight: 800; letter-spacing: 3px; color: var(--gold-dark); text-transform: uppercase;
+    }
+    .env-label .env-main {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900;
+      color: var(--navy); line-height: 1.25;
+    }
+    .env-label .env-to {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700;
+      color: #1a2744; font-style: italic; margin-top: 2px;
+    }
+    .env-bottom {
+      height: 0;
+      border-left: calc(min(440px, 92vw) / 2) solid transparent;
+      border-right: calc(min(440px, 92vw) / 2) solid transparent;
+      border-bottom: calc(min(440px, 92vw) * 0.3) solid #cfbc82;
+    }
+
+    /* CLICK HINT */
+    .click-hint {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(212, 175, 55, 0.22);
+      border: 1.5px solid rgba(255, 215, 0, 0.65);
+      border-radius: 50px; padding: 14px 34px;
+      color: #fff4cc; font-size: 0.95rem; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+      animation: pulse 2.2s ease-in-out infinite;
+      transition: all 0.3s;
+      backdrop-filter: blur(8px);
+    }
+    .click-hint:hover {
+      background: rgba(212, 175, 55, 0.38); transform: translateY(-3px);
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+    }
+    .bounce-arrow { animation: bounce 1.2s ease-in-out infinite; display: inline-block; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      50%      { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+    }
+
+    /* TOP / ACTION BAR */
+    .actions-bar {
+      display: flex; gap: 12px; z-index: 10; margin-top: 4px;
+    }
+    .action-chip {
+      background: rgba(255,255,255,0.12);
+      border: 1.2px solid rgba(255,255,255,0.3);
+      border-radius: 30px; padding: 9px 20px;
+      font-size: 0.85rem; font-weight: 800; color: #fce8a9;
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .action-chip:hover {
+      background: rgba(212, 175, 55, 0.3); border-color: #d4af37;
+    }
+
+    /* MODAL OVERLAY */
+    #modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      display: none; align-items: center; justify-content: center;
+      overflow-y: auto; padding: 24px 14px;
+      background: rgba(3, 7, 18, 0); backdrop-filter: blur(0px);
+      transition: background 0.5s, backdrop-filter 0.5s;
+    }
+    #modal-overlay.active {
+      display: flex;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    /* INVITATION CARD */
+    .card {
+      width: min(670px, 100%);
+      background: linear-gradient(165deg, #fffef9 0%, #fbf6e9 50%, #f6edd7 100%);
+      border-radius: 18px;
+      border: 2.5px solid #c8a33a;
+      box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.18), 0 25px 70px rgba(0,0,0,0.6), 0 0 60px rgba(212, 175, 55, 0.25);
+      position: relative; overflow: hidden;
+      transform: scale(0.7) translateY(80px); opacity: 0;
+      transition: transform 0.65s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.5s ease;
+      margin: auto; color: var(--text-dark);
+    }
+    .card.open { transform: scale(1) translateY(0); opacity: 1; }
+    
+    .card-inner-border {
+      position: absolute; inset: 12px;
+      border: 1.5px solid rgba(191, 161, 66, 0.45);
+      border-radius: 12px; pointer-events: none; z-index: 2;
+    }
+    .card-inner-border-2 {
+      position: absolute; inset: 16px;
+      border: 0.8px dashed rgba(191, 161, 66, 0.3);
+      border-radius: 9px; pointer-events: none; z-index: 2;
+    }
+
+    /* CORNERS */
+    .corner { position: absolute; width: 75px; height: 75px; pointer-events: none; z-index: 3; }
+    .corner svg { width: 100%; height: 100%; }
+    .c-tl { top: 0; left: 0; }
+    .c-tr { top: 0; right: 0; transform: scaleX(-1); }
+    .c-bl { bottom: 0; left: 0; transform: scaleY(-1); }
+    .c-br { bottom: 0; right: 0; transform: scale(-1); }
+
+    .btn-close {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(191, 161, 66, 0.15); border: 1.5px solid #c8a33a;
+      color: #7a540f; width: 38px; height: 38px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800; z-index: 10; transition: all 0.25s;
+    }
+    .btn-close:hover {
+      background: #c8a33a; color: #fff; transform: rotate(90deg);
+    }
+
+    /* CARD CONTENT */
+    .card-content {
+      position: relative; z-index: 3;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 44px 38px 36px;
+    }
+
+    .school-badge {
+      display: flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 12px;
+    }
+    .cap-icon {
+      font-size: 2.8rem; filter: drop-shadow(0 4px 10px rgba(191, 161, 66, 0.45));
+    }
+    .school-name {
+      font-family: 'Playfair Display', serif; font-size: clamp(0.9rem, 2.6vw, 1.1rem);
+      font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #5d3f07; text-align: center; line-height: 1.4;
+    }
+
+    .divider {
+      display: flex; align-items: center; width: 100%; gap: 12px; margin: 12px 0;
+    }
+    .dl {
+      flex: 1; height: 1.5px;
+      background: linear-gradient(to right, transparent, #bfa142 50%, transparent);
+    }
+    .dd {
+      width: 9px; height: 9px; background: #bfa142; transform: rotate(45deg); flex-shrink: 0;
+      box-shadow: 0 0 5px rgba(191, 161, 66, 0.5);
+    }
+
+    .card-headline {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 6.8vw, 3.9rem);
+      color: #050e24; text-align: center; line-height: 1.15; margin-bottom: 2px;
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    }
+    .card-sub {
+      font-family: 'Montserrat', sans-serif; font-size: 0.92rem;
+      font-weight: 900; letter-spacing: 3.5px; color: #6d4a0a;
+      text-transform: uppercase; text-align: center;
+    }
+
+    .to-section {
+      background: linear-gradient(135deg, rgba(191, 161, 66, 0.18), rgba(191, 161, 66, 0.06));
+      border: 1.8px solid rgba(191, 161, 66, 0.5); border-radius: 12px;
+      padding: 14px 24px; width: 100%; text-align: center; margin: 12px 0 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .to-label {
+      font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 900;
+      letter-spacing: 2.2px; color: #6e4e0b; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .to-name {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 3.4vw, 1.6rem);
+      font-weight: 900; color: #040a18; line-height: 1.3;
+    }
+
+    .card-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 2.8vw, 1.3rem);
+      color: #060d1c; text-align: center; line-height: 1.85;
+      font-weight: 700; max-width: 540px; margin: 12px 0;
+    }
+    .card-body strong {
+      font-weight: 900; color: #000000;
+    }
+
+    /* GRADUATE PROFILE / PHOTO */
+    .photo-section {
+      display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 8px 0 12px;
+    }
+    .photo-frame {
+      width: 155px; height: 155px; border-radius: 50%;
+      background: linear-gradient(135deg, #fbe39e, #bfa142, #7a540f);
+      padding: 5px;
+      box-shadow: 0 0 0 5px rgba(191, 161, 66, 0.25), 0 10px 30px rgba(0,0,0,0.22);
+      cursor: pointer; overflow: hidden; position: relative;
+      transition: transform 0.3s;
+    }
+    .photo-frame:hover { transform: scale(1.04); }
+    .photo-frame img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+      border: 3px solid #fff; background-color: #f7eed8;
+    }
+    .photo-placeholder {
+      width: 100%; height: 100%; border-radius: 50%; border: 3px solid white;
+      background: linear-gradient(145deg, #efe6d3 0%, #dfd1b3 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    }
+    .ph-icon { font-size: 2.6rem; color: #6e4e0b; }
+    .ph-text {
+      font-size: 0.72rem; font-weight: 900; color: #493306;
+      text-align: center; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .photo-edit-hint {
+      font-size: 0.78rem; font-weight: 800; color: #6d4a0a;
+      display: flex; align-items: center; gap: 4px; cursor: pointer;
+    }
+
+    .graduate-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 6.8vw, 3.8rem);
+      color: #040916; text-align: center; line-height: 1.1; margin-top: 4px;
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.18);
+    }
+    .graduate-degree {
+      font-family: 'Montserrat', sans-serif; font-size: 0.88rem; font-weight: 900;
+      letter-spacing: 2px; color: #684507; text-transform: uppercase;
+    }
+
+    /* DETAILS GRID */
+    .details-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; margin-top: 10px;
+    }
+    .detail-box {
+      background: linear-gradient(135deg, rgba(8, 18, 42, 0.05), rgba(191, 161, 66, 0.1));
+      border: 1.8px solid rgba(191, 161, 66, 0.45); border-radius: 12px;
+      padding: 13px 15px; display: flex; flex-direction: column; gap: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .detail-box.full { grid-column: 1 / -1; }
+    .d-header { display: flex; align-items: center; gap: 6px; }
+    .d-icon { font-size: 1.3rem; }
+    .d-label {
+      font-size: 0.75rem; letter-spacing: 2px; color: #6d4a0a;
+      text-transform: uppercase; font-weight: 900; font-family: 'Montserrat', sans-serif;
+    }
+    .d-val {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      font-weight: 900; color: #040918; line-height: 1.35;
+    }
+    .d-sub {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      font-weight: 700; color: #0f1d3a; margin-top: 2px; line-height: 1.45;
+    }
+
+    /* FOOTER */
+    .card-footer {
+      text-align: center; font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem; font-weight: 800; color: #050c1c; font-style: italic;
+      border-top: 1.8px solid rgba(191, 161, 66, 0.4);
+      padding-top: 16px; width: 100%; margin-top: 16px;
+    }
+    .footer-sig {
+      font-family: 'Great Vibes', cursive; font-size: 1.95rem; font-weight: 700;
+      color: #634105; display: block; margin-top: 2px; font-style: normal;
+    }
+    .footer-class {
+      display: block; margin-top: 4px; font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem; font-weight: 900; color: #634105; letter-spacing: 1px; font-style: normal;
+    }
+
+    /* BUTTONS ROW */
+    .btn-row {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+      margin-top: 16px; width: 100%;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 26px; border-radius: 50px;
+      font-size: 0.9rem; letter-spacing: 1.5px; text-transform: uppercase;
+      cursor: pointer; border: none; font-family: 'Montserrat', sans-serif; font-weight: 900;
+      transition: all 0.25s ease; text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #996e14 100%);
+      color: #ffffff; box-shadow: 0 4px 18px rgba(191, 161, 66, 0.45);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px); box-shadow: 0 7px 24px rgba(191, 161, 66, 0.6);
+      background: linear-gradient(135deg, #e0be4a 0%, #ab7c19 100%);
+    }
+    .btn-secondary {
+      background: rgba(191, 161, 66, 0.18); color: #593b05;
+      border: 2px solid #bfa142;
+    }
+    .btn-secondary:hover {
+      background: rgba(191, 161, 66, 0.32); transform: translateY(-3px);
+    }
+
+    /* EDIT PANEL / DRAWER */
+    #edit-panel {
+      position: fixed; top: 0; right: -460px;
+      width: min(440px, 96vw); height: 100vh;
+      background: linear-gradient(180deg, #091329 0%, #030814 100%);
+      border-left: 2px solid rgba(212, 175, 55, 0.4);
+      z-index: 2500; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto; padding: 28px 22px 40px;
+      box-shadow: -12px 0 50px rgba(0,0,0,0.7);
+      color: #fff;
+    }
+    #edit-panel.open { right: 0; }
+    .panel-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
+    }
+    .panel-title {
+      font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 900;
+      color: #fce8a9;
+    }
+    .panel-close-btn {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #fce8a9; border-radius: 8px; padding: 6px 14px;
+      cursor: pointer; font-size: 0.85rem; font-weight: 800; transition: all 0.2s;
+    }
+    .panel-close-btn:hover { background: rgba(212, 175, 55, 0.3); }
+    .panel-sub {
+      font-size: 0.78rem; font-weight: 800; color: rgba(246, 222, 150, 0.85);
+      letter-spacing: 1.5px; margin-bottom: 22px; text-transform: uppercase;
+    }
+
+    .fg { margin-bottom: 16px; }
+    .fg label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #f7e09e; margin-bottom: 6px; font-weight: 900;
+    }
+    .fg input, .fg textarea {
+      width: 100%; background: rgba(255,255,255,0.08);
+      border: 1.8px solid rgba(212, 175, 55, 0.4); border-radius: 9px;
+      padding: 11px 14px; color: #ffffff;
+      font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700;
+      outline: none; transition: border-color 0.2s, background 0.2s;
+    }
+    .fg input:focus, .fg textarea:focus {
+      border-color: #e5c358; background: rgba(255,255,255,0.13);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+    }
+    .fg textarea { resize: vertical; line-height: 1.5; }
+
+    /* Photo Upload Box in Panel */
+    .photo-edit-box {
+      border: 1.8px dashed rgba(212, 175, 55, 0.55);
+      border-radius: 12px; padding: 14px; text-align: center;
+      background: rgba(255,255,255,0.04);
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .photo-preview-circle {
+      width: 84px; height: 84px; border-radius: 50%;
+      border: 2px solid #d4af37; object-fit: cover;
+      background: #111a33;
+    }
+    .photo-upload-actions {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-panel-action {
+      background: rgba(212, 175, 55, 0.22); border: 1.2px solid #d4af37;
+      color: #fce8a9; padding: 8px 14px; border-radius: 6px;
+      font-size: 0.8rem; font-weight: 800; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-panel-action:hover { background: #d4af37; color: #040814; }
+    .btn-panel-danger {
+      background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+    .btn-panel-danger:hover { background: #ef4444; color: #fff; }
+
+    .panel-apply {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, #d4af37 0%, #996e14 100%);
+      border: none; border-radius: 10px; color: white;
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer; margin-top: 10px; transition: all 0.25s;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+    }
+    .panel-apply:hover {
+      transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212, 175, 55, 0.6);
+    }
+
+    /* SHARE MODAL */
+    #share-modal {
+      position: fixed; inset: 0; z-index: 3000;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(4, 8, 20, 0.85); backdrop-filter: blur(8px);
+      padding: 16px;
+    }
+    #share-modal.show { display: flex; }
+    .share-card {
+      width: min(500px, 100%);
+      background: linear-gradient(170deg, #101c38 0%, #070e1e 100%);
+      border: 2px solid #d4af37; border-radius: 16px;
+      padding: 26px 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      color: #fff; text-align: center;
+    }
+    .share-title {
+      font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 900;
+      color: #fce8a9; margin-bottom: 6px;
+    }
+    .share-desc {
+      font-size: 0.92rem; color: #e2e8f0; margin-bottom: 18px; line-height: 1.5; font-weight: 600;
+    }
+    .share-url-box {
+      display: flex; gap: 8px; margin-bottom: 18px;
+    }
+    .share-url-input {
+      flex: 1; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(212, 175, 55, 0.4);
+      border-radius: 8px; padding: 10px 12px; color: #fce8a9; font-size: 0.82rem;
+      outline: none; font-family: monospace;
+    }
+    .share-copy-btn {
+      background: #d4af37; border: none; border-radius: 8px; padding: 0 16px;
+      color: #060e22; font-weight: 900; font-size: 0.88rem; cursor: pointer;
+      letter-spacing: 1px; transition: all 0.2s; flex-shrink: 0;
+    }
+    .share-copy-btn:hover { background: #f0c94d; }
+    .share-buttons {
+      display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;
+    }
+    .share-app-btn {
+      padding: 11px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 800;
+      text-decoration: none; color: #fff; display: flex; align-items: center; gap: 6px;
+      cursor: pointer; border: none; transition: transform 0.2s;
+    }
+    .share-app-btn:hover { transform: translateY(-2px); }
+    .btn-zalo { background: #0068ff; }
+    .btn-fb { background: #1877f2; }
+    .btn-share-close {
+      background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #ccc;
+      padding: 9px 22px; border-radius: 30px; cursor: pointer; font-size: 0.85rem;
+      margin-top: 16px; font-weight: 700;
+    }
+
+    /* TOAST */
+    #toast {
+      position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(30px);
+      background: linear-gradient(135deg, #d4af37 0%, #8c6411 100%);
+      color: #ffffff; padding: 14px 32px; border-radius: 50px;
+      font-size: 0.95rem; font-weight: 900; letter-spacing: 0.8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.4);
+      z-index: 9999; opacity: 0; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: none; white-space: nowrap; text-align: center;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* CONFETTI CANVAS */
+    #confetti-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 1200; }
+
+    /* RESPONSIVE */
+    @media(max-width: 580px) {
+      .card-content { padding: 36px 20px 28px; }
+      .details-grid { grid-template-columns: 1fr; }
+      .detail-box.full { grid-column: auto; }
+      .btn-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .photo-frame { width: 135px; height: 135px; }
+    }
+  </style>
 </head>
 <body>
-<p>Loading...</p>
-<script>document.title="Thiep Moi";</script>
+
+<div id="particles"></div>
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ENVELOPE SCENE -->
+<div id="envelope-scene">
+  <div class="scene-title">
+    <h1>Thư Mời Tốt Nghiệp</h1>
+    <div class="sub-name" id="env-sub-name">Phạm Thị Bích Loan</div>
+    <div class="sub-event">&#10022; LỄ TRAO BẰNG CỬ NHÂN &#10022;</div>
+  </div>
+
+  <div class="envelope-wrapper" onclick="openInvitation()" tabindex="0" role="button" aria-label="Mở thiệp mời">
+    <div class="envelope-box">
+      <!-- Flap top -->
+      <div class="env-flap"></div>
+      <span class="seal-emoji">&#127891;</span>
+
+      <!-- Env body -->
+      <div class="env-body-area">
+        <div class="env-side-left"></div>
+        <div class="env-side-right"></div>
+        <div class="env-label">
+          <span class="env-badge">Thư Mời Trang Trọng</span>
+          <span class="env-main">Lễ Trao Bằng Tốt Nghiệp</span>
+          <span class="env-to" id="env-display-to">Kính gửi: Gia đình, Thầy Cô &amp; Bạn bè</span>
+        </div>
+      </div>
+
+      <!-- Bottom fold -->
+      <div class="env-bottom"></div>
+    </div>
+  </div>
+
+  <div class="click-hint" onclick="openInvitation()" tabindex="0">
+    <span>Chạm Để Mở Thiệp</span>
+    <span class="bounce-arrow">&#9660;</span>
+  </div>
+
+  <div class="actions-bar">
+    <button class="action-chip" onclick="openEditPanel()">&#9998; Chỉnh sửa thông tin</button>
+    <button class="action-chip" onclick="openShareModal()">&#128279; Chia sẻ link</button>
+  </div>
+</div>
+
+<!-- INVITATION MODAL -->
+<div id="modal-overlay">
+  <div class="card" id="invitation-card">
+    <button class="btn-close" onclick="closeInvitation()" title="Đóng thiệp">&#10005;</button>
+
+    <!-- Corners decoration -->
+    <div class="corner c-tl"><svg viewBox="0 0 75 75" fill="none"><path d="M6 6 Q6 38 38 38 Q6 38 6 70" stroke="#bfa142" stroke-width="1.8" fill="none"/><circle cx="6" cy="6" r="4" fill="#bfa142"/><circle cx="6" cy="70" r="2.8" fill="#bfa142" opacity=".6"/><circle cx="38" cy="38" r="2.5" fill="#bfa142" opacity=".8"/><text x="10" y="16" fill="#bfa142" font-size="14" opacity=".85">&#10022;</text></svg></div>
+    <div class="corner c-tr"><svg viewBox="0 0 75 75" fill="none"><path d="M6 6 Q6 38 38 38 Q6 38 6 70" stroke="#bfa142" stroke-width="1.8" fill="none"/><circle cx="6" cy="6" r="4" fill="#bfa142"/><circle cx="6" cy="70" r="2.8" fill="#bfa142" opacity=".6"/><circle cx="38" cy="38" r="2.5" fill="#bfa142" opacity=".8"/><text x="10" y="16" fill="#bfa142" font-size="14" opacity=".85">&#10022;</text></svg></div>
+    <div class="corner c-bl"><svg viewBox="0 0 75 75" fill="none"><path d="M6 6 Q6 38 38 38 Q6 38 6 70" stroke="#bfa142" stroke-width="1.8" fill="none"/><circle cx="6" cy="6" r="4" fill="#bfa142"/><circle cx="6" cy="70" r="2.8" fill="#bfa142" opacity=".6"/><circle cx="38" cy="38" r="2.5" fill="#bfa142" opacity=".8"/><text x="10" y="16" fill="#bfa142" font-size="14" opacity=".85">&#10022;</text></svg></div>
+    <div class="corner c-br"><svg viewBox="0 0 75 75" fill="none"><path d="M6 6 Q6 38 38 38 Q6 38 6 70" stroke="#bfa142" stroke-width="1.8" fill="none"/><circle cx="6" cy="6" r="4" fill="#bfa142"/><circle cx="6" cy="70" r="2.8" fill="#bfa142" opacity=".6"/><circle cx="38" cy="38" r="2.5" fill="#bfa142" opacity=".8"/><text x="10" y="16" fill="#bfa142" font-size="14" opacity=".85">&#10022;</text></svg></div>
+
+    <div class="card-inner-border"></div>
+    <div class="card-inner-border-2"></div>
+
+    <div class="card-content">
+
+      <div class="school-badge">
+        <span class="cap-icon">&#127891;</span>
+        <div class="school-name" id="display-school-name">Trường Đại học Kinh doanh và Công nghệ Hà Nội</div>
+      </div>
+
+      <div class="divider"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+
+      <div class="card-headline">Trân Trọng Kính Mời</div>
+      <div class="card-sub">&#10022; LỄ TRAO BẰNG TỐT NGHIỆP &#10022;</div>
+
+      <div class="divider" style="margin-top:12px;"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+
+      <div class="to-section">
+        <div class="to-label">Kính gửi</div>
+        <div class="to-name" id="display-to-name">Gia đình, Thầy Cô &amp; Bạn bè thân mến</div>
+      </div>
+
+      <div class="card-body" style="margin: 14px 0 6px;">
+        Với niềm hân hoan và lòng biết ơn sâu sắc, trân trọng kính mời Quý vị đến tham dự và chung vui trong ngày trọng đại của:
+      </div>
+
+      <!-- Graduate Photo & Name -->
+      <div class="photo-section">
+        <div class="photo-frame" onclick="openEditPanel()" title="Bấm để thay đổi ảnh tốt nghiệp">
+          <div class="photo-placeholder" id="photo-placeholder">
+            <span class="ph-icon">&#127891;</span>
+            <span class="ph-text">Ảnh Tốt Nghiệp</span>
+          </div>
+          <img id="graduate-photo" src="" alt="Ảnh tốt nghiệp" style="display:none;" />
+        </div>
+        <div class="photo-edit-hint" onclick="openEditPanel()">&#128247; Đổi ảnh tốt nghiệp</div>
+        <div class="graduate-name" id="display-grad-name">Phạm Thị Bích Loan</div>
+        <div class="graduate-degree" id="display-grad-degree">Cử Nhân &mdash; Khóa 2022 &ndash; 2026</div>
+      </div>
+
+      <div class="card-body" id="display-message" style="margin: 8px 0 16px;">
+        Sau <strong>4 năm</strong> miệt mài học tập và rèn luyện, đây là dấu mốc tự hào đánh dấu chặng đường trưởng thành và những nỗ lực không ngừng nghỉ. Sự hiện diện và lời chúc phúc của Quý vị là niềm vinh hạnh to lớn đối với tôi và gia đình!
+      </div>
+
+      <div class="divider"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+
+      <!-- Time & Venue Details -->
+      <div class="details-grid">
+        <div class="detail-box">
+          <div class="d-header">
+            <span class="d-icon">&#128197;</span>
+            <span class="d-label">Thời Gian</span>
+          </div>
+          <div class="d-val" id="display-date">Thứ Hai, 12/10/2026</div>
+          <div class="d-sub" id="display-time" style="font-weight:900; color:#6d4a0a;">10:00 Sáng</div>
+        </div>
+        <div class="detail-box">
+          <div class="d-header">
+            <span class="d-icon">&#127979;</span>
+            <span class="d-label">Địa Điểm</span>
+          </div>
+          <div class="d-val" id="display-venue">ĐH Kinh Doanh &amp; Công Nghệ</div>
+          <div class="d-sub">Hội trường A &mdash; Cơ sở Vĩnh Tuy</div>
+        </div>
+        <div class="detail-box full">
+          <div class="d-header">
+            <span class="d-icon">&#128205;</span>
+            <span class="d-label">Địa Chỉ Chi Tiết</span>
+          </div>
+          <div class="d-val" id="display-addr" style="font-size:0.98rem;">
+            Số 29A, Ngõ 124 Phố Vĩnh Tuy, Phường Vĩnh Hưng, Quận Hai Bà Trưng, Hà Nội.
+          </div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin-top:18px;"><div class="dl"></div><div class="dd"></div><div class="dl"></div></div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="openEditPanel()">&#9998;&nbsp; Chỉnh Sửa Thông Tin</button>
+        <button class="btn btn-primary" onclick="openShareModal()">&#128279;&nbsp; Chia Sẻ Link Thiệp</button>
+      </div>
+
+      <div class="card-footer">
+        Rất hân hạnh được đón tiếp Quý vị!
+        <span class="footer-sig" id="display-sig-name">Phạm Thị Bích Loan</span>
+        <span class="footer-class">&mdash; Lớp Đại học Kinh doanh, Niên khóa 2022&ndash;2026 &mdash;</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EDIT PANEL DRAWER -->
+<div id="edit-panel">
+  <div class="panel-header">
+    <div class="panel-title">&#9998; Chỉnh Sửa Thiệp</div>
+    <button class="panel-close-btn" onclick="closeEditPanel()">&#10005; Đóng</button>
+  </div>
+  <div class="panel-sub">TÙY CHỈNH THÔNG TIN &amp; ẢNH</div>
+
+  <div class="fg">
+    <label for="input-to-name">Người nhận thiệp (Kính gửi)</label>
+    <input type="text" id="input-to-name" value="Gia đình, Thầy Cô &amp; Bạn bè thân mến" placeholder="VD: Bác Nam &amp; Gia đình..." />
+  </div>
+
+  <div class="fg">
+    <label for="input-grad-name">Tên người tốt nghiệp</label>
+    <input type="text" id="input-grad-name" value="Phạm Thị Bích Loan" placeholder="Họ và tên người tốt nghiệp..." />
+  </div>
+
+  <div class="fg">
+    <label>Ảnh tốt nghiệp</label>
+    <div class="photo-edit-box">
+      <img id="panel-photo-preview" class="photo-preview-circle" src="" alt="Xem trước ảnh" style="display:none;" />
+      <div id="panel-photo-none" style="font-size:0.8rem; color:#aaa;">Chưa có ảnh (đang dùng icon mặc định)</div>
+      
+      <div class="photo-upload-actions">
+        <button type="button" class="btn-panel-action" onclick="document.getElementById('file-upload-input').click()">
+          &#128247; Chọn ảnh từ máy
+        </button>
+        <button type="button" class="btn-panel-action btn-panel-danger" id="btn-remove-photo" onclick="removePhoto()" style="display:none;">
+          &#10005; Xóa ảnh
+        </button>
+      </div>
+      <input type="file" id="file-upload-input" accept="image/*" style="display:none;" onchange="handleFileSelect(event)" />
+      
+      <div style="width:100%; margin-top:4px;">
+        <label style="font-size:0.7rem; margin-bottom:4px; display:block;">HOẶC DÁN LINK ẢNH TRỰC TUYẾN (URL):</label>
+        <input type="url" id="input-photo-url" placeholder="https://example.com/anh.jpg" style="font-size:0.82rem; padding:8px 10px;" onchange="handleUrlPhotoChange()" />
+      </div>
+    </div>
+  </div>
+
+  <div class="fg">
+    <label for="input-time">Giờ tổ chức</label>
+    <input type="time" id="input-time" value="10:00" />
+  </div>
+
+  <div class="fg">
+    <label for="input-date">Ngày tổ chức</label>
+    <input type="text" id="input-date" value="Thứ Hai, 12/10/2026" placeholder="VD: Thứ Hai, 12/10/2026..." />
+  </div>
+
+  <div class="fg">
+    <label for="input-venue">Địa điểm</label>
+    <input type="text" id="input-venue" value="Trường Đại học Kinh doanh và Công nghệ Hà Nội" placeholder="Tên trường / hội trường..." />
+  </div>
+
+  <div class="fg">
+    <label for="input-addr">Địa chỉ chi tiết</label>
+    <input type="text" id="input-addr" value="Số 29A, Ngõ 124 Phố Vĩnh Tuy, Phường Vĩnh Hưng, Quận Hai Bà Trưng, Hà Nội." />
+  </div>
+
+  <div class="fg">
+    <label for="input-message">Lời mời / Thông điệp</label>
+    <textarea id="input-message" rows="3">Sau 4 năm miệt mài học tập và rèn luyện, đây là dấu mốc tự hào đánh dấu chặng đường trưởng thành và những nỗ lực không ngừng nghỉ. Sự hiện diện và lời chúc phúc của Quý vị là niềm vinh hạnh to lớn đối với tôi và gia đình!</textarea>
+  </div>
+
+  <button class="panel-apply" onclick="applyAndSaveEdits()">&#10003;&nbsp; Lưu Thay Đổi &amp; Áp Dụng</button>
+  <button class="panel-apply" style="background:rgba(212,175,55,0.2); border:1.8px solid #d4af37; margin-top:8px;" onclick="openShareModal()">
+    &#128279;&nbsp; Chia Sẻ Link Sau Khi Lưu
+  </button>
+</div>
+
+<!-- SHARE MODAL -->
+<div id="share-modal">
+  <div class="share-card">
+    <div class="share-title">&#128279; Chia Sẻ Thiệp Mời</div>
+    <div class="share-desc">
+      Link chia sẻ đã được tự động lưu toàn bộ thông tin và ảnh bạn vừa chỉnh sửa. Người nhận khi bấm vào link sẽ nhìn thấy đúng thông tin đó!
+    </div>
+
+    <div class="share-url-box">
+      <input type="text" id="share-link-input" class="share-url-input" readonly />
+      <button class="share-copy-btn" onclick="copyShareUrl()">SAO CHÉP</button>
+    </div>
+
+    <div class="share-buttons">
+      <button class="share-app-btn btn-zalo" onclick="shareViaNativeOrCopy()">
+        &#128242; Gửi Qua Zalo / Tin Nhắn
+      </button>
+      <button class="share-app-btn btn-fb" onclick="shareFacebook()">
+        &#127760; Chia Sẻ Facebook
+      </button>
+    </div>
+
+    <button class="btn-share-close" onclick="closeShareModal()">Đóng lại</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// --- STATE MANAGEMENT ---
+var appData = {
+  toName: 'Gia đình, Thầy Cô & Bạn bè thân mến',
+  gradName: 'Phạm Thị Bích Loan',
+  time: '10:00',
+  date: 'Thứ Hai, 12/10/2026',
+  venue: 'Trường Đại học Kinh doanh và Công nghệ Hà Nội',
+  addr: 'Số 29A, Ngõ 124 Phố Vĩnh Tuy, Phường Vĩnh Hưng, Quận Hai Bà Trưng, Hà Nội.',
+  message: 'Sau 4 năm miệt mài học tập và rèn luyện, đây là dấu mốc tự hào đánh dấu chặng đường trưởng thành và những nỗ lực không ngừng nghỉ. Sự hiện diện và lời chúc phúc của Quý vị là niềm vinh hạnh to lớn đối với tôi và gia đình!',
+  photo: '', // base64
+  photoUrl: '' // external url
+};
+
+var STORAGE_KEY = 'GRAD_INVITE_DATA_V2';
+
+// --- INITIAL LOAD ---
+window.addEventListener('DOMContentLoaded', function() {
+  initParticles();
+  loadData();
+  renderData();
+});
+
+// Load from URL params first (if someone received a shared link), else from localStorage
+function loadData() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var hash = window.location.hash;
+  var hasUrlData = false;
+
+  if (urlParams.get('to')) {
+    appData.toName = decodeURIComponent(urlParams.get('to'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('grad')) {
+    appData.gradName = decodeURIComponent(urlParams.get('grad'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('time')) {
+    appData.time = decodeURIComponent(urlParams.get('time'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('date')) {
+    appData.date = decodeURIComponent(urlParams.get('date'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('venue')) {
+    appData.venue = decodeURIComponent(urlParams.get('venue'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('addr')) {
+    appData.addr = decodeURIComponent(urlParams.get('addr'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('msg')) {
+    appData.message = decodeURIComponent(urlParams.get('msg'));
+    hasUrlData = true;
+  }
+  if (urlParams.get('purl')) {
+    appData.photoUrl = decodeURIComponent(urlParams.get('purl'));
+    hasUrlData = true;
+  }
+  
+  // Extract compressed photo in hash if present
+  if (hash && hash.indexOf('#photo=') === 0) {
+    try {
+      var photoBase64 = decodeURIComponent(hash.replace('#photo=', ''));
+      if (photoBase64.indexOf('data:image') === 0) {
+        appData.photo = photoBase64;
+        hasUrlData = true;
+      }
+    } catch(e){}
+  }
+
+  // If NOT loaded from URL, try localStorage
+  if (!hasUrlData) {
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        var parsed = JSON.parse(saved);
+        appData = Object.assign(appData, parsed);
+      }
+    } catch(e){}
+  } else {
+    // If loaded from URL, also persist into visitor's localStorage!
+    saveToLocalStorage();
+  }
+
+  // Sync inputs
+  syncInputsWithData();
+}
+
+function saveToLocalStorage() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+  } catch(e){
+    console.warn('LocalStorage error:', e);
+  }
+}
+
+function syncInputsWithData() {
+  document.getElementById('input-to-name').value = appData.toName;
+  document.getElementById('input-grad-name').value = appData.gradName;
+  document.getElementById('input-time').value = appData.time;
+  document.getElementById('input-date').value = appData.date;
+  document.getElementById('input-venue').value = appData.venue;
+  document.getElementById('input-addr').value = appData.addr;
+  document.getElementById('input-message').value = appData.message;
+  document.getElementById('input-photo-url').value = appData.photoUrl || '';
+}
+
+function formatTimeDisplay(timeStr) {
+  if (!timeStr) return '10:00 Sáng';
+  var parts = timeStr.split(':');
+  if (parts.length < 2) return timeStr;
+  var h = parseInt(parts[0], 10);
+  var m = parseInt(parts[1], 10);
+  var period = h < 12 ? 'Sáng' : (h < 18 ? 'Chiều' : 'Tối');
+  var h12 = h % 12 || 12;
+  return (h12 < 10 ? '0' : '') + h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + period;
+}
+
+function renderData() {
+  // Update envelope & card elements
+  document.getElementById('env-sub-name').textContent = appData.gradName;
+  document.getElementById('env-display-to').textContent = 'Kính gửi: ' + appData.toName;
+  document.getElementById('display-to-name').textContent = appData.toName;
+  document.getElementById('display-grad-name').textContent = appData.gradName;
+  document.getElementById('display-sig-name').textContent = appData.gradName;
+  document.getElementById('display-date').textContent = appData.date;
+  document.getElementById('display-time').textContent = formatTimeDisplay(appData.time);
+  document.getElementById('display-venue').textContent = appData.venue;
+  document.getElementById('display-addr').textContent = appData.addr;
+  document.getElementById('display-message').textContent = appData.message;
+
+  // Photo rendering
+  var activePhotoSrc = appData.photoUrl || appData.photo;
+  var cardImg = document.getElementById('graduate-photo');
+  var cardPh = document.getElementById('photo-placeholder');
+  var panelPreview = document.getElementById('panel-photo-preview');
+  var panelNone = document.getElementById('panel-photo-none');
+  var btnRemove = document.getElementById('btn-remove-photo');
+
+  if (activePhotoSrc) {
+    cardImg.src = activePhotoSrc;
+    cardImg.style.display = 'block';
+    cardPh.style.display = 'none';
+
+    panelPreview.src = activePhotoSrc;
+    panelPreview.style.display = 'inline-block';
+    panelNone.style.display = 'none';
+    btnRemove.style.display = 'inline-block';
+  } else {
+    cardImg.style.display = 'none';
+    cardPh.style.display = 'flex';
+
+    panelPreview.style.display = 'none';
+    panelNone.style.display = 'block';
+    btnRemove.style.display = 'none';
+  }
+}
+
+// --- PHOTO HANDLING ---
+function handleFileSelect(event) {
+  var file = event.target.files[0];
+  if (!file) return;
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      // Compress image with canvas to max 220px thumbnail (compact for memory & URL)
+      var maxDim = 220;
+      var w = img.width;
+      var h = img.height;
+      if (w > h) {
+        if (w > maxDim) { h = Math.round((h * maxDim) / w); w = maxDim; }
+      } else {
+        if (h > maxDim) { w = Math.round((w * maxDim) / h); h = maxDim; }
+      }
+      var canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      
+      var compressedData = canvas.toDataURL('image/jpeg', 0.65);
+      appData.photo = compressedData;
+      appData.photoUrl = '';
+      document.getElementById('input-photo-url').value = '';
+      
+      renderData();
+      saveToLocalStorage();
+      showToast('Đã tải và lưu ảnh tốt nghiệp thành công!');
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function handleUrlPhotoChange() {
+  var val = document.getElementById('input-photo-url').value.trim();
+  if (val) {
+    appData.photoUrl = val;
+    appData.photo = '';
+    renderData();
+    saveToLocalStorage();
+    showToast('Đã lưu link ảnh trực tuyến!');
+  }
+}
+
+function removePhoto() {
+  appData.photo = '';
+  appData.photoUrl = '';
+  document.getElementById('input-photo-url').value = '';
+  document.getElementById('file-upload-input').value = '';
+  renderData();
+  saveToLocalStorage();
+  showToast('Đã xóa ảnh, chuyển về mặc định!');
+}
+
+// --- APPLY EDITS ---
+function applyAndSaveEdits() {
+  appData.toName = document.getElementById('input-to-name').value.trim() || 'Gia đình, Thầy Cô & Bạn bè';
+  appData.gradName = document.getElementById('input-grad-name').value.trim() || 'Phạm Thị Bích Loan';
+  appData.time = document.getElementById('input-time').value || '10:00';
+  appData.date = document.getElementById('input-date').value.trim() || 'Thứ Hai, 12/10/2026';
+  appData.venue = document.getElementById('input-venue').value.trim() || 'Trường Đại học Kinh doanh và Công nghệ Hà Nội';
+  appData.addr = document.getElementById('input-addr').value.trim();
+  appData.message = document.getElementById('input-message').value.trim();
+
+  var urlVal = document.getElementById('input-photo-url').value.trim();
+  if (urlVal) {
+    appData.photoUrl = urlVal;
+  }
+
+  saveToLocalStorage();
+  renderData();
+  closeEditPanel();
+  showToast('Đã lưu toàn bộ thông tin & ảnh thành công!');
+  spawnConfetti(50);
+}
+
+// --- SHARE LINK BUILDER ---
+function generateShareUrl() {
+  var baseUrl = window.location.origin + window.location.pathname;
+  var params = new URLSearchParams();
+
+  params.set('to', encodeURIComponent(appData.toName));
+  params.set('grad', encodeURIComponent(appData.gradName));
+  params.set('time', encodeURIComponent(appData.time));
+  params.set('date', encodeURIComponent(appData.date));
+  params.set('venue', encodeURIComponent(appData.venue));
+  if (appData.addr) params.set('addr', encodeURIComponent(appData.addr));
+  if (appData.message) params.set('msg', encodeURIComponent(appData.message));
+  if (appData.photoUrl) params.set('purl', encodeURIComponent(appData.photoUrl));
+
+  var fullUrl = baseUrl + '?' + params.toString();
+
+  // If local base64 photo exists and no photoUrl, attach in hash
+  if (appData.photo && !appData.photoUrl) {
+    fullUrl += '#photo=' + encodeURIComponent(appData.photo);
+  }
+
+  return fullUrl;
+}
+
+function openShareModal() {
+  var url = generateShareUrl();
+  document.getElementById('share-link-input').value = url;
+  document.getElementById('share-modal').classList.add('show');
+}
+
+function closeShareModal() {
+  document.getElementById('share-modal').classList.remove('show');
+}
+
+function copyShareUrl() {
+  var input = document.getElementById('share-link-input');
+  input.select();
+  input.setSelectionRange(0, 99999);
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(input.value).then(function() {
+      showToast('Đã sao chép link kèm thông tin & ảnh đã lưu!');
+    }).catch(function() {
+      fallbackCopy(input.value);
+    });
+  } else {
+    fallbackCopy(input.value);
+  }
+}
+
+function fallbackCopy(text) {
+  var el = document.createElement('textarea');
+  el.value = text;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  showToast('Đã sao chép link kèm thông tin & ảnh đã lưu!');
+}
+
+function shareViaNativeOrCopy() {
+  var url = generateShareUrl();
+  if (navigator.share) {
+    navigator.share({
+      title: 'Thư Mời Lễ Tốt Nghiệp - ' + appData.gradName,
+      text: 'Trân trọng kính mời ' + appData.toName + ' tham dự Lễ tốt nghiệp của ' + appData.gradName,
+      url: url
+    }).catch(function(){
+      copyShareUrl();
+    });
+  } else {
+    copyShareUrl();
+  }
+}
+
+function shareFacebook() {
+  var url = generateShareUrl();
+  var fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+  window.open(fbUrl, '_blank', 'width=600,height=400');
+}
+
+// --- OPEN / CLOSE CARD ---
+var isOpen = false;
+function openInvitation() {
+  if (isOpen) return;
+  isOpen = true;
+  var scene = document.getElementById('envelope-scene');
+  scene.style.opacity = '0';
+  scene.style.transform = 'scale(0.92)';
+
+  setTimeout(function() {
+    scene.style.display = 'none';
+    var overlay = document.getElementById('modal-overlay');
+    overlay.style.display = 'flex';
+    requestAnimationFrame(function() {
+      overlay.classList.add('active');
+      setTimeout(function() {
+        document.getElementById('invitation-card').classList.add('open');
+        setTimeout(function(){ spawnConfetti(120); }, 350);
+      }, 80);
+    });
+  }, 380);
+}
+
+function closeInvitation() {
+  var card = document.getElementById('invitation-card');
+  card.classList.remove('open');
+  setTimeout(function() {
+    var overlay = document.getElementById('modal-overlay');
+    overlay.classList.remove('active');
+    setTimeout(function() {
+      overlay.style.display = 'none';
+      var scene = document.getElementById('envelope-scene');
+      scene.style.display = 'flex';
+      setTimeout(function() {
+        scene.style.opacity = '1';
+        scene.style.transform = 'scale(1)';
+      }, 50);
+      isOpen = false;
+    }, 450);
+  }, 450);
+}
+
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeInvitation();
+});
+
+function openEditPanel() {
+  document.getElementById('edit-panel').classList.add('open');
+}
+function closeEditPanel() {
+  document.getElementById('edit-panel').classList.remove('open');
+}
+
+// --- TOAST NOTIFICATION ---
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 3000);
+}
+
+// --- PARTICLES BACKGROUND ---
+function initParticles() {
+  var c = document.getElementById('particles');
+  var colors = ['#d4af37', '#fce8a9', '#ffffff', '#996e14', '#ffeaa7'];
+  for (var i = 0; i < 42; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    var s = Math.random() * 5 + 2;
+    p.style.cssText = 'width:' + s + 'px;height:' + s + 'px;left:' + (Math.random() * 100) + '%;background:' + colors[Math.floor(Math.random() * colors.length)] + ';animation-duration:' + (8 + Math.random() * 12) + 's;animation-delay:' + (Math.random() * 10) + 's;opacity:0;';
+    c.appendChild(p);
+  }
+}
+
+// --- CONFETTI CANNON ---
+var canvas = document.getElementById('confetti-canvas');
+var ctx = canvas.getContext('2d');
+var confettis = [];
+var animating = false;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function spawnConfetti(n) {
+  n = n || 90;
+  var colors = ['#d4af37', '#fce8a9', '#08122a', '#ffffff', '#996e14', '#ffd700', '#ff9eaa'];
+  for (var i = 0; i < n; i++) {
+    confettis.push({
+      x: Math.random() * canvas.width,
+      y: -20 - Math.random() * 100,
+      w: 6 + Math.random() * 8,
+      h: 3 + Math.random() * 5,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 3,
+      vy: 2.2 + Math.random() * 3.5,
+      rot: Math.random() * Math.PI * 2,
+      vrot: (Math.random() - 0.5) * 0.18,
+      alpha: 1
+    });
+  }
+  if (!animating) animateConfetti();
+}
+
+function animateConfetti() {
+  animating = true;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  confettis = confettis.filter(function(c) { return c.alpha > 0.01; });
+  confettis.forEach(function(c) {
+    c.x += c.vx; c.y += c.vy; c.rot += c.vrot;
+    if (c.y > canvas.height * 0.8) c.alpha -= 0.014;
+    ctx.save(); ctx.globalAlpha = c.alpha;
+    ctx.translate(c.x, c.y); ctx.rotate(c.rot);
+    ctx.fillStyle = c.color; ctx.beginPath();
+    ctx.ellipse(0, 0, c.w, c.h, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  });
+  if (confettis.length > 0) requestAnimationFrame(animateConfetti);
+  else animating = false;
+}
+
+// --- KEYBOARD CONTROLS ---
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    if (document.getElementById('share-modal').classList.contains('show')) closeShareModal();
+    else if (document.getElementById('edit-panel').classList.contains('open')) closeEditPanel();
+    else closeInvitation();
+  }
+});
+</script>
 </body>
 </html>
